@@ -9,18 +9,18 @@ using osu.Game.Graphics;
 
 namespace osu.Game.Rulesets.Mods
 {
-    public abstract class ModHardRock : Mod, IApplicableToDifficulty
+    public abstract class ModHeavyMetal : Mod, IApplicableToDifficulty
     {
-        public override string Name => "Hard Rock";
-        public override string Acronym => "HR";
+        public override string Name => "Heavy Metal";
+        public override string Acronym => "HM";
         public override IconUsage? Icon => OsuIcon.ModHardRock;
         public override ModType Type => ModType.DifficultyIncrease;
-        public override LocalisableString Description => "Everything just got a bit harder...";
-        public override Type[] IncompatibleMods => new[] { typeof(ModEasy), typeof(ModDifficultyAdjust), typeof(ModHeavyMetal) };
+        public override LocalisableString Description => "Everything just got a LOT harder...";
+        public override Type[] IncompatibleMods => new[] { typeof(ModEasy), typeof(ModDifficultyAdjust), typeof(ModHardRock) };
         public override bool Ranked => UsesDefaultConfiguration;
         public override bool ValidForFreestyleAsRequiredMod => true;
 
-        protected const float ADJUST_RATIO = 1.4f;
+        protected const float ADJUST_RATIO = 1.5f;
 
         public virtual void ApplyToDifficulty(BeatmapDifficulty difficulty)
         {
